@@ -207,10 +207,10 @@ Classification: Accuracy, Precision, Recall, F1, ROC-AUC
 Cross-validation: KFold / StratifiedKFold
 
 Confusion matrices, ROC, and PR curves
-
+```
 
 ###📧 Contact
 
-Maintainer: <!-- EDIT: Arpan Patra -->
-Email: <!-- EDIT: arpanpatra800188500@gmail.com -->
-Repo: https://github.com/<username>/<repo>
+Maintainer: Arpan Patra 
+Email: arpanpatra800188500@gmail.com 
+Repo: https://github.com/DONCHAN70047
