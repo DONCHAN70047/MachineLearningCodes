@@ -95,8 +95,122 @@ numpy
 scikit-learn
 matplotlib
 seaborn
-jupyterlab
-joblib
-xgboost         
-lightgbm       
-flask           
+```
+
+## How to Run
+# create processed dataset
+python src/data/make_dataset.py --input_path data/raw/mydata.csv --output_path data/processed/cleaned.csv
+
+# run training
+python src/models/train.py --data_path data/processed/cleaned.csv --model_out models/best_model.pkl
+
+# inference example
+python src/models/predict.py --model models/best_model.pkl --input sample.json
+
+
+##Run notebooks
+jupyter lab
+
+##ML Details...
+🧹 Data Cleaning & Preprocessing
+
+Steps performed:
+
+ Removed duplicates
+
+ Handled missing values:
+
+Numerical columns: Median imputation
+
+Categorical columns: Mode or <missing> token
+
+ Standardized date formats and parsed timestamps
+
+ Converted categorical variables to category dtype
+
+ Outlier treatment (1st/99th percentile or IQR)
+
+ Saved transformation pipeline in src/data/clean_data.py
+
+🔍 Exploratory Data Analysis (EDA)
+
+Performed in notebooks:
+
+notebooks/01-data-overview.ipynb
+
+notebooks/02-data-cleaning.ipynb
+
+Key steps:
+
+Distribution analysis of target variable
+
+Correlation heatmaps
+
+Missing data patterns
+
+Feature vs target relationships
+
+Time-series or trend analysis (if applicable)
+
+🛠️ Feature Engineering
+
+Aggregations (mean/count per group)
+
+Time-based features (hour, day-of-week)
+
+Encoding:
+
+One-hot for low-cardinality categories
+
+Target encoding for high-cardinality features
+
+Scaling: StandardScaler or MinMaxScaler
+
+Interaction features, polynomial terms (optional)
+
+Saved feature pipeline alongside trained model.
+
+🤖 Modeling
+
+Algorithms tested:
+
+Baseline: LinearRegression / LogisticRegression
+
+Tree-based: RandomForest, XGBoost, LightGBM
+
+Optional: Stacking / Ensemble models
+
+Hyperparameter tuning:
+
+GridSearchCV / RandomizedSearchCV / Optuna
+
+Training script: src/models/train.py
+
+Load processed data
+
+Train/validation/test split
+
+Fit preprocessing pipeline
+
+Train models
+
+Save best model
+
+📊 Evaluation
+
+Metrics:
+
+Regression: RMSE, MAE, R²
+
+Classification: Accuracy, Precision, Recall, F1, ROC-AUC
+
+Cross-validation: KFold / StratifiedKFold
+
+Confusion matrices, ROC, and PR curves
+
+
+###📧 Contact
+
+Maintainer: <!-- EDIT: Arpan Patra -->
+Email: <!-- EDIT: arpanpatra800188500@gmail.com -->
+Repo: https://github.com/<username>/<repo>
